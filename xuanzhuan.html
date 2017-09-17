@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <style>
+      .wrapper{
+          position: relative;
+        perspective: 600px;
+        width: 300px;
+        height: 300px;
+        border: 2px dashed #000;
+      }
+      .demo{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-top: -100px;
+          margin-left: -100px;
+          transform-style:preserve-3d;
+          width: 200px;
+          height: 200px;
+          animation: move  3s  linear infinite;
+      }
+      @keyframes move{
+          0%{
+              transform: rotatex(0deg) rotatey(0deg);
+          }
+          100%{
+              transform: rotatex(360deg) rotatey(360deg);
+          }
+      }
+        .demo div{
+            position: absolute;
+           width: 200px;
+           height: 200px;
+           opacity: 0.8;
+           line-height: 200px;
+           text-align: center;
+           font-size: 30px;
+           transform: translateZ(-100px);
+
+        }
+        /* 前面 */
+         .demo .item1{
+             background-color: red;
+             transform: translateZ(100px);
+         }
+         /* 后面 */
+         .demo .item2{
+             background-color: green;
+             transform: rotatey(180deg) translateZ(100px);
+         }
+         /* 左面 */
+          .demo .item3{
+             background-color: pink;
+             transform: rotatey(90deg) translatez(100px);
+         } 
+         /* 右面 */
+         .demo .item4{
+             background-color: yellow;
+             transform: rotatey(-90deg) translatez(100px);
+         } 
+         /* 上面 */
+         .demo .item5{
+             transform: rotatex(90deg) translatez(100px);
+             background-color: blue;
+         } 
+         /* 下面 */
+         .demo .item6{
+             transform: rotatex(-90deg) translatez(100px);
+             background-color: sienna;
+         }
+     </style>
+</head>
+<body>
+    <div class = "wrapper">
+      <div class="demo">
+          <div class="item1">啦</div>
+          <div class="item2">啦</div>
+          <div class="item3">啦</div>
+          <div class="item4">啦</div>
+          <div class="item5">啦</div>
+          <div class="item6">啦</div>
+      </div>
+    </div>
+    
+</body>
+</html>
